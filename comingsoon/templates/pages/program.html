@@ -1,0 +1,16 @@
+{% extends 'pages/base.html' %}
+{% block title %}Program | HUET{% endblock %}
+
+{% block content %}
+  <h1 class="text-center mb-4">Chương trình hội nghị</h1>
+  <div class="bg-light p-4 rounded shadow">
+    {% for day in program %}
+      <h4 class="mt-3">{{ day.date }}</h4>
+      <ul>
+        {% for item in day.sessions %}
+          <li><strong>{{ item.time }}</strong>: {{ item.title }} ({{ item.speaker }})</li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+{% endblock %}

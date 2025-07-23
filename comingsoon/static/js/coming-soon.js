@@ -4,7 +4,7 @@
   // Vide - Video Background Settings
   $('body').vide({
     mp4: "/static/mp4/bg.mp4",
-    poster: "/static/img/bg-mobile-fallback.jpg"
+    poster: "/static/img/1-hoinghi.jpg"
   }, {
     posterType: 'jpg'
   });

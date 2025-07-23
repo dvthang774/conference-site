@@ -1,0 +1,13 @@
+{% extends 'pages/base.html' %}
+{% block title %}Comitee | HUET{% endblock %}
+
+{% block content %}
+  <h1 class="text-center mb-4">Ban tổ chức</h1>
+  <div class="bg-light p-4 rounded shadow">
+    <ul>
+      {% for member in comitee_members %}
+        <li><strong>{{ member.name }}</strong> – {{ member.position }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

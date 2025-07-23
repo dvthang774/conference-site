@@ -1,0 +1,10 @@
+{% extends 'pages/base.html' %}
+{% block title %}Paper Submission | HUET{% endblock %}
+
+{% block content %}
+  <h1 class="text-center mb-4">Gửi bài báo</h1>
+  <div class="bg-light p-4 rounded shadow">
+    <p>{{ submission_guide }}</p>
+    <a href="{{ submission_portal }}" class="btn btn-success mt-3">Gửi bài tại đây</a>
+  </div>
+{% endblock %}
