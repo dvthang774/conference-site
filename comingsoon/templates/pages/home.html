@@ -76,10 +76,7 @@
           <a class="nav-link text-white" href="{% url 'comingsoon:call_for_paper' %}">Call for Paper</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link text-white" href="{% url 'comingsoon:registration' %}">Registration</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link text-white" href="{% url 'comingsoon:submission' %}">Paper Submission</a>
+          <a class="nav-link text-white" href="{% url 'submit:submission' %}">Submission</a>
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link text-white" href="{% url 'comingsoon:program' %}">Program</a>
@@ -94,44 +91,35 @@
       <div class="row h-100">
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
-            <div class="text-center mb-4">
+            <!-- <div class="text-center mb-4">
               <img src="https://huet.hueuni.edu.vn/wp-content/uploads/2024/06/huet_logo_2.png" alt="HUET Logo" style="max-height: 150px;" />
-            </div>
-            <h1 class="mb-3">OPENING OF CONFERENCE</h1>
+            </div> -->
+            <h2 class="mb-3">Hội nghị khoa học về Trí tuệ nhân tạo, Công nghệ xanh và Phát triển bền vững</h2>
+            <h2 class="mb-4">AIGTSD 2025</h2>
             <p class="mb-5">Hội nghị dự kiến triển khai vào <strong>Sep 2025</strong>! Để lại thông tin để nhận thông báo!</p>
             <div class="input-group input-group-newsletter">
-              <input type="email" class="form-control" placeholder="Enter email..." aria-label="Search for..." />
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Notify Me!</button>
-              </span>
+              <form method="POST" action="{% url 'send_email:send_email' %}">
+              {% csrf_token %}
+              <div class="input-group input-group-newsletter">
+                <input type="email" name="email" class="form-control" placeholder="Enter email..." required />
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="submit">Notify Me!</button>
+                </span>
+              </div>
+            </form>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Form đăng ký nhận thông tin -->
+
+  <!-- Thông tin hội nghị  -->
   <div class="container my-5">
-    <h2 class="text-white text-center mb-4">Đăng ký nhận thông báo hội nghị</h2>
-    <form method="POST" class="bg-light p-4 rounded shadow" style="max-width: 700px; margin: auto;">
-      <div class="form-group">
-        <label for="fullname">Họ và tên</label>
-        <input type="text" class="form-control" id="fullname" placeholder="Nhập họ tên của bạn" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Nhập email" required />
-      </div>
-      <div class="form-group">
-        <label for="phone">Số điện thoại</label>
-        <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" />
-      </div>
-      <div class="form-group">
-        <label for="message">Quan tâm đến nội dung gì?</label>
-        <textarea class="form-control" id="message" rows="3" placeholder="Nhập nội dung quan tâm..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block">Gửi đăng ký</button>
-    </form>
+    <h2 class="text-black text-center mb-4">Thông tin hội nghị</h2>
+    <p class="text-center" style="color: black; font-size: 1.25rem; font-weight: 500;">
+      Hội nghị sẽ diễn ra vào <strong>Sep 2025</strong>. Chúng tôi sẽ cập nhật thông tin chi tiết về địa điểm, chương trình và các diễn giả sớm nhất có thể.
+    </p>
   </div>
 
   <!-- Địa điểm hội nghị -->

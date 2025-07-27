@@ -13,8 +13,24 @@
   <link href="{% static 'css/coming-soon.min.css' %}" rel="stylesheet" />
 
   <style>
+    html, body {
+      height: 100%; /* quan trọng để flexbox hoạt động */
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* chiều cao ít nhất bằng chiều cao màn hình */
+    }
+    .content-wrapper {
+      flex: 1; /* phần nội dung sẽ chiếm hết không gian còn lại */
+    }
     .navbar-nav .nav-link:hover {
       color: #ffc107 !important;
+    }
+    footer {
+      /* có thể thêm style nếu muốn */
     }
   </style>
 </head>
@@ -23,8 +39,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-        <img src="https://huet.hueuni.edu.vn/wp-content/uploads/2024/06/huet_logo_2.png" alt="HUET Logo" class="navbar-brand"  href="/" style="max-height: 70px;"/>
-      <!-- <a class="navbar-brand" href="/">HUET </a> -->
+      <img src="https://huet.hueuni.edu.vn/wp-content/uploads/2024/06/huet_logo_2.png" alt="HUET Logo" class="navbar-brand"  href="/" style="max-height: 70px;"/>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,16 +49,15 @@
           <li class="nav-item mx-2"><a class="nav-link" href="{% url 'comingsoon:about' %}">About</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="{% url 'comingsoon:comitee' %}">Comitee</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="{% url 'comingsoon:call_for_paper' %}">Call for Paper</a></li>
-          <li class="nav-item mx-2"><a class="nav-link" href="{% url 'comingsoon:registration' %}">Registration</a></li>
-          <li class="nav-item mx-2"><a class="nav-link" href="{% url 'comingsoon:submission' %}">Submission</a></li>
+          <li class="nav-item mx-2"><a class="nav-link" href="{% url 'submit:submission' %}">Submission</a></li>
           <li class="nav-item mx-2"><a class="nav-link" href="{% url 'comingsoon:program' %}">Program</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Nội dung sẽ được đổ vào đây -->
-  <div class="container my-5">
+  <!-- Nội dung chính -->
+  <div class="content-wrapper container my-5">
     {% block content %}
     {% endblock %}
   </div>

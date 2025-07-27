@@ -1,0 +1,11 @@
+
+{% extends 'pages/base.html' %}
+{% block title %}Notify | HUET{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Notify Me!</button>
+  </form>
+{% endblock %}

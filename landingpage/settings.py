@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     # my_apps
     'comingsoon',
+    "send_email",
+    'submit',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'send_email.backends.email_backend.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+# EMAIL_HOST_USER = 'dvthang774@gmail.com'
+EMAIL_HOST_USER = '20e1020065@hueuni.edu.vn'
+EMAIL_HOST_PASSWORD = 'aiml woro fzbw rsxp'  # Không phải mật khẩu Gmail
+# EMAIL_HOST_PASSWORD = 'jkeh gqfc cwiu wkad'  
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+### Media files settings
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

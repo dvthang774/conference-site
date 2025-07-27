@@ -4,10 +4,20 @@
 {% block content %}
   <h1 class="text-center mb-4">Call for Papers</h1>
   <div class="bg-light p-4 rounded shadow">
-    <p>{{ call_text }}</p>
+    <p>{{ call_text|linebreaks }}</p>
     <ul>
       {% for topic in topics %}
         <li>{{ topic }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Hướng dẫn gửi bài</h2>
+    <p>{{ submission_guidelines|linebreaks }}</p>
+
+    <h2>Ngày quan trọng</h2>
+    <ul>
+      {% for date in important_dates %}
+        <li>{{ date }}</li>
       {% endfor %}
     </ul>
   </div>
