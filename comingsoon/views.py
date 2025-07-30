@@ -28,11 +28,22 @@ Hội thảo khoa học quốc gia với chủ đề **“Trí tuệ nhân tạo
         'about_text': about_text,
     })
 
-
 def comitee_view(request):
     comitee = [
-        {'name': 'TS. Nguyễn Văn A', 'position': 'Chủ tịch hội nghị'},
-        {'name': 'PGS. Trần Thị B', 'position': 'Thư ký'},
+        {'name': 'Ông Bùi Văn Lợi', 'position': 'PGĐ phụ trách ĐHH – Trưởng ban'},
+        {'name': 'Ông Nguyễn Quang Lịch', 'position': 'Khoa trưởng Khoa KT&CN - ĐHH – Phó Trưởng ban'},
+        {'name': 'Ông Trần Văn Giang', 'position': 'Trưởng Ban KHCN-QHQT ĐHH – Phó Trưởng ban'},
+        {'name': 'Ông Trần Đăng Huy', 'position': 'Trưởng Ban TCCB ĐHH – Phó Trưởng ban'},
+        {'name': 'Ông Nguyễn Xuân Huy', 'position': 'Phó Trưởng Ban KHCN&QHQT ĐHH – Uỷ viên'},
+        {'name': 'Ông Nguyễn Chí Bảo', 'position': 'Phó Trưởng Ban KHCN&QHQT ĐHH – Uỷ viên'},
+        {'name': 'Ông Ngô Xuân Cường', 'position': 'Tổ trưởng Tổ ĐT-KHCN, Khoa KT&CN - ĐHH – Uỷ viên'},
+        {'name': 'Ông Nguyễn Đăng Nhật', 'position': 'Tổ trưởng Tổ HC-TH, Khoa KT&CN - ĐHH – Uỷ viên'},
+        {'name': 'Ông Lê Đình Hiếu', 'position': 'Trưởng BM KT&QLCN, Khoa KT&CN - ĐHH – Uỷ viên'},
+        {'name': 'Ông Hồ Quốc Dũng', 'position': 'Trưởng BM KT&QLCN, Khoa KT&CN - ĐHH – Uỷ viên'},
+        {'name': 'Ông Chử Đức Trình / Ông Nguyễn Hoài Sơn', 'position': 'Hiệu trưởng Trường ĐHCN, ĐHQGHN / Trưởng phòng KHCN và HTPT Trường ĐHCN, ĐHQGHN – Dự kiến'},
+        {'name': 'Ông Nguyễn Đức Tuyên', 'position': 'Trường Điện, ĐHBK Hà Nội – Dự kiến'},
+        {'name': 'Ông Phạm Quốc Cường', 'position': 'Chủ nhiệm ngành Kỹ thuật Máy tính, Trường ĐHBK, ĐHQGTPHCM – Dự kiến'},
+        {'name': 'Đại học Duy Tân Đà Nẵng', 'position': 'Dự kiến'},
     ]
     return render(request, 'pages/comitee.html', {'comitee_members': comitee})
 

@@ -2,12 +2,27 @@
 {% block title %}Comitee | HUET{% endblock %}
 
 {% block content %}
-  <h1 class="text-center mb-4">Ban tổ chức</h1>
-  <div class="bg-light p-4 rounded shadow">
-    <ul>
-      {% for member in comitee_members %}
-        <li><strong>{{ member.name }}</strong> – {{ member.position }}</li>
-      {% endfor %}
-    </ul>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Ban tổ chức</h1>
+    <div class="table-responsive shadow rounded bg-white p-3">
+      <table class="table table-striped table-bordered">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Họ và tên</th>
+            <th scope="col">Chức vụ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for member in comitee_members %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td>{{ member.name }}</td>
+              <td>{{ member.position }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 {% endblock %}
